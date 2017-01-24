@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<title>js_lessons_13-14</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+  <script type="text/template" id="test">
+    <form action="#" method="POST">
+    <h1><%= title%></h1>        
+    <ol>
+    	<% for (var i = 0; i < questions.length; i++) { %>
+            <li>
+              <%= questions[i]%>
+             	<% for (var j = 0; j < answers.length; j++) { %>
+             	    <div> 
+                    <input type="radio" id="<%=answers[i][j]%>" name="<%=questions[i]%>" >
+                    <label for="<%= answers[i][j]%>"><%= answers[i][j]%></label>
+                    </div>
+                <% } %>
+            </li>
+    	<% } %>
+    </ol>
+    <button type="submit" id="modal-launcher" name="">Check my results</button>
+    <div id="modal-background"></div>
+    <div id="modal-content">
+    <button id="modal-close">X</button>
+    <p id="result"></p>
+    </div>
+    </form>
+  </script>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="js/template.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
